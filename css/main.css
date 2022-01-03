@@ -12,17 +12,57 @@
     background-color: rgb(255, 255, 255);
 }
 .caseName{
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(209, 198, 198);
     width: 100%;
     height: 70px;
+
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .caseDesc{
-    background-color: blue;
+    background-color: rgb(209, 198, 198);
     width: 100%;
-    height: 210px;
+    height: 230px;
+
+    text-align: center;
+    overflow-y: scroll;
+}
+.caseDesc > p{
+    font-size: 20px;
+    color: black;
 }
 .caseButton{
-    background-color: brown;
+    background-color: rgb(201, 195, 195);
     width: 100%;
-    height: 70px;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.button1{
+    background-color: rgb(26, 70, 165);
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.button2{
+    background-color: rgb(252, 151, 0);
+    width: 30%;
+    height: 30px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

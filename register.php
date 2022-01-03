@@ -28,24 +28,24 @@
         $emailRequest = $getEmail->fetch(PDO::FETCH_ASSOC);
 
         if($emailRequest) {
-            echo "<h1>This email have an account !</h1>";
-}else{
-        $getPseudo = $connectionPDO->prepare('SELECT * FROM `user` WHERE pseudo=:pseudo; ');
-        $getPseudo->execute([ "pseudo" => $_POST["registerPseudo"] ]);
-        $pseudoRequest = $getPseudo->fetch(PDO::FETCH_ASSOC);
+            echo "<script>alert(\"This email have an account\")</script>";
+        }else{
+            $getPseudo = $connectionPDO->prepare('SELECT * FROM `user` WHERE pseudo=:pseudo; ');
+            $getPseudo->execute([ "pseudo" => $_POST["registerPseudo"] ]);
+            $pseudoRequest = $getPseudo->fetch(PDO::FETCH_ASSOC);
 
         if($pseudoRequest) {
-            echo "<h1>This Pseudo have an account !</h1>";
-}else{
+            echo "<script>alert(\"This Pseudo have an Account\")</script>";
+        }else{
 
-        echo "<h1>Votre Compte à bien était crée !</h1>";
+            echo "<script>alert(\"Your account has been created\")</script>";
 
-        $hashedPassword = hash("SHA256", $_POST["registerPassword"]);
+            $hashedPassword = hash("SHA256", $_POST["registerPassword"]);
 
-        $createUser = $connectionPDO->prepare('INSERT INTO user (idUser, email, password, pseudo, lastName, firstName, role) VALUES (:idUser, :email, :password, :pseudo, :lastName, :firstName, :role);');
-        $createUser->execute(["idUser" => v4(), "email" => $_POST["registerEmail"], "password" => $hashedPassword, "pseudo" => $_POST["registerPseudo"], "lastName" => $_POST["registerlastName"], "firstName" => $_POST["registerfirstName"], "role" => "ROLE_USER"]);
+            $createUser = $connectionPDO->prepare('INSERT INTO user (idUser, email, password, pseudo, lastName, firstName, role) VALUES (:idUser, :email, :password, :pseudo, :lastName, :firstName, :role);');
+            $createUser->execute(["idUser" => v4(), "email" => $_POST["registerEmail"], "password" => $hashedPassword, "pseudo" => $_POST["registerPseudo"], "lastName" => $_POST["registerlastName"], "firstName" => $_POST["registerfirstName"], "role" => "ROLE_USER"]);
 
-        $userRequest = $createUser->fetch(PDO::FETCH_ASSOC);
+            $userRequest = $createUser->fetch(PDO::FETCH_ASSOC);
 
         
         }
