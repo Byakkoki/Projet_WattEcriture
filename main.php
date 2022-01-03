@@ -9,7 +9,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <?php require_once("navbarlogin.html"); ?>
+    <?php require_once("navbarlogin.php"); ?>
 
 
 
@@ -79,8 +79,8 @@
             echo "</p>";
             echo "</div>";
             echo "<form class='caseButton'>";
-            echo "<input type='submit' class='button1' value='Liste des Chapitre'></input>";
-            echo "<input type='submit' class='button2' value='Modifier'></input>";
+            echo "<button class='button1'><a href='https://majinbu-3000.ecole-404.com/logout.php'>Liste des Chapitre</a></button>";
+            echo "<button class='button2'><a href='https://majinbu-3000.ecole-404.com/logout.php'>Modifier</a></button>";
             echo "</form>";
             echo "</div>";
         }

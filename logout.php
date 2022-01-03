@@ -8,7 +8,7 @@
     <title>Logout</title>
 </head>
 <body>
-    <?php require_once("navbarlogin.html"); ?>
+    <?php require_once("navbarlogin.php"); ?>
 
 <?php
     if (isset($_POST['submitform']))

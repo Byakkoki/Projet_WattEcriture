@@ -50,6 +50,8 @@
     height: 30px;
     border-radius: 5px;
 
+    color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,8 +63,14 @@
     height: 30px;
     border-radius: 5px;
 
+    color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+a{
+    color: white;
+    text-decoration: none;
 }

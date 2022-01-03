@@ -8,7 +8,7 @@
     <title>Story Create</title>
 </head>
 <body>
-    <?php require_once("../navbarlogin.html"); ?>
+    <?php require_once("../navbarlogin.php"); ?>
 
 <?php
 
