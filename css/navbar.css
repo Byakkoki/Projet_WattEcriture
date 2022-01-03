@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+}
+
+#navbar {
+    height: 75px;
+    background-color: #635555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#nav-mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+    padding: 0px 10px;
+}
+
+#home > img {
+    width: 48px;
+}
+
+#connexion, #inscription, #creation {
+    width: 300px;
+    height: 75px;
+    background-color: #ffa800;
+    transition: background-color 0.5s;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+#connexion:hover, #inscription:hover, #creation:hover {
+    background-color: #635555;
+}

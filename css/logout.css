@@ -1,0 +1,53 @@
+body {
+    background-color: #181923;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+#logout {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0px;
+    width: 450px;
+    background-color: hsla(0, 29%, 92%, 0.8);
+    padding: 35px;
+    border-radius: 10px;
+}
+
+#logout > label {
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    margin-bottom:10px;
+}
+
+.input {
+    border: none;
+    height: 35px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.p {
+    margin-bottom: 20px;
+}
+
+#connectButton {
+    align-self: center;
+    height: 50px;
+    width: 80%;
+    background-color: #43b23a;
+    transition: background-color 0.5s;
+    border: none;
+    color: white;
+    font-size: 23px;
+}
+
+#connectButton:hover {
+    background-color: #40703c;
+}
