@@ -18,5 +18,14 @@
     <p>
         VOUS POUVEZ VOUS INSCRIRE OU VOUS CONNECTEZ POUR CREER VOTRE HISTOIRE !
     </p>
+
+<div id="container">
+    <?php
+
+        require_once("./API/Controller/StoryController.php");
+
+    ?>
+</div>
+
 </body>
 </html>

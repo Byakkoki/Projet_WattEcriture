@@ -52,7 +52,7 @@ function createToken($idUser){
     $createToken = $connectionPDO->prepare('UPDATE `user` SET token=:token, created=NOW() WHERE idUser=:id ');
     $createToken->execute([ "token" => $token, "id" => $idUser ]);
 
-    setcookie("WP-Auth-Token", $token, time() + 3600, "/", "", true, true);
+    setcookie("WP-Auth-Token", $token, time() + 18000, "/", "", true, true);
 }
 
 ?>

@@ -1,34 +1,30 @@
 <?php
-/**
- * Ici on vas gerere le contact avec la base. Houston ?
- */
-// on récupere l connection PDO
-// $connectionPDO = new PDO('mysql:host=localhost;dbname=dlardpou;charset=utf8', 'phpmyadmin', 'nath14PMA');
 
-//Function pour les ROLE_USER pour avoir seulement leur histoire
-function getStory(){
-    global $connectionPDO;
-
-    $getUserWithToken = $connectionPDO->prepare('SELECT * FROM `user` WHERE token LIKE :token;');
-    $getUserWithToken->execute(["token" => $_COOKIE["WP-Auth-Token"]]);
-    $user = $getUserWithToken->fetch(PDO::FETCH_ASSOC);
-
-
-    $getStory = $connectionPDO->prepare('SELECT * FROM `histoire` WHERE user_idUser LIKE :idUser;');
-    $getStory->execute(["idUser" => $user["idUser"]]);
-    $getStoryUser = $getStory->fetchAll(PDO::FETCH_ASSOC);
-
-    print_r($getStoryUser);
-    die;
-}
-//Function pour le ROLE_ADMIN qui permet d'avoir toute les histoire
 function getAllStory(){
     global $connectionPDO;
 
-    $getAllStory = $connectionPDO->prepare('SELECT * FROM `histoire`');
+    $getAllStory = $connectionPDO->prepare('SELECT `Pseudo`, `idHistoire`, `user_idUser`, `name`, `description` FROM `histoire` JOIN user ON user_idUser = idUser;');
     $getAllStory->execute();
     $getStory = $getAllStory->fetchAll(PDO::FETCH_ASSOC);
 
-    print_r($getStory);
-    die;
+    foreach($getStory as $story){
+        echo "<div class='histoire'>";
+        echo "<div class='caseName'>";
+        echo "<h2>";
+        echo $story['name'];
+        echo "</h2>";
+        echo "</div>";
+        echo "<div class='caseDesc'>";
+        echo "<p>";
+        echo $story['description'];
+        echo "</p>";
+        echo "</div>";
+        echo "<form class='caseButton'>";
+        echo "<button class='button1'><a href='https://majinbu-3000.ecole-404.com/StoryDetailsUser.php?id=".$story["idHistoire"]."'>Liste des Chapitre</a></button>";
+        echo "</form>";
+        echo "<div class='auteur'>";
+        echo "<h2>Auteur : ".$story['Pseudo']."";
+        echo "</div>";
+        echo "</div>";
+    }
 }

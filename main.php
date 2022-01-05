@@ -11,9 +11,6 @@
 <body>
     <?php require_once("navbarlogin.php"); ?>
 
-
-
-
 <div id="container">
     <?php
     require_once('./API/Guard.php');
@@ -49,8 +46,8 @@
             echo "</div>";
 
             echo "<form class='caseButton'>";
-            echo "<input type='submit' class='button1' value='Liste des Chapitre'></input>";
-            echo "<input type='submit' class='button2' value='Modifier'></input>";
+            echo "<button class='button1'><a href='https://majinbu-3000.ecole-404.com/story/StoryDetails.php?id=".$story["idHistoire"]."'>Liste des Chapitre</a></button>";
+            echo "<button class='button2'><a href='https://majinbu-3000.ecole-404.com/story/StoryUpdate.php?id=".$story["idHistoire"]."'>Modifier</a></button>";
             echo "</form>";
 
             echo "</div>";
@@ -62,7 +59,7 @@
     function getAllStory(){
         global $connectionPDO;
 
-        $getAllStory = $connectionPDO->prepare('SELECT * FROM `histoire`');
+        $getAllStory = $connectionPDO->prepare('SELECT `Pseudo`, `idHistoire`, `user_idUser`, `name`, `description` FROM `histoire` JOIN user ON user_idUser = idUser;');
         $getAllStory->execute();
         $getStory = $getAllStory->fetchAll(PDO::FETCH_ASSOC);
 
@@ -79,9 +76,12 @@
             echo "</p>";
             echo "</div>";
             echo "<form class='caseButton'>";
-            echo "<button class='button1'><a href='https://majinbu-3000.ecole-404.com/logout.php'>Liste des Chapitre</a></button>";
-            echo "<button class='button2'><a href='https://majinbu-3000.ecole-404.com/logout.php'>Modifier</a></button>";
+            echo "<button class='button1'><a href='https://majinbu-3000.ecole-404.com/story/StoryDetails.php?id=".$story["idHistoire"]."'>Liste des Chapitre</a></button>";
+            echo "<button class='button2'><a href='https://majinbu-3000.ecole-404.com/story/StoryUpdate.php?id=".$story["idHistoire"]."'>Modifier</a></button>";
             echo "</form>";
+            echo "<div class='auteur'>";
+            echo "<h2>Auteur : ".$story['Pseudo']."";
+            echo "</div>";
             echo "</div>";
         }
 
