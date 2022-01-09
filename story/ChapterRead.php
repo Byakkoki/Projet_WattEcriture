@@ -30,6 +30,7 @@
 
         global $connectionPDO;
 
+        //récupere le chapitre par rapport a l'id chapitre
         $getChapitre = $connectionPDO->prepare('SELECT * FROM `chapitre` WHERE idChapitre="'.$results['id'].'";');
         $getChapitre->execute();
         $getAllChapitre = $getChapitre->fetchAll(PDO::FETCH_ASSOC);
@@ -43,7 +44,6 @@
             echo "</div>";
             echo "<section>";
         }
-    
 ?>
 
 <!--

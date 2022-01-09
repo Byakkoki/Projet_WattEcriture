@@ -11,6 +11,7 @@
     <?php require_once("navbarlogin.php"); ?>
 
 <?php
+//Lorsque le button submit est cliquer on lance le script de logout
     if (isset($_POST['submitform']))
         {   
         ?>
@@ -19,6 +20,8 @@
     </script>      
     <?php
     }
+
+    // Set le COOKIE en null pour le mettre en "deconnecter"
     setcookie("WP-Auth-Token", "null", time() +0, "/", "", true, true);
 
     //header('Location: https://majinbu-3000.ecole-404.com/index.php');

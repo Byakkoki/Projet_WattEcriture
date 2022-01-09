@@ -136,6 +136,9 @@ a{
 
     background-color: rgb(255, 255, 255);
 }
+.nameChapter h3{
+    margin-left: 10px;
+}
 .buttonChapter{
     width: 40%;
 

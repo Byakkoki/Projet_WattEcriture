@@ -10,16 +10,14 @@
 </head>
 <body>
 <header id="navbar">
-    <a href="https://majinbu-3000.ecole-404.com/main.php" id="home"><img src="../assets/page-daccueil.png"></a>
+    <a href="https://majinbu-3000.ecole-404.com/index.php" id="home"><img src="../assets/page-daccueil.png"></a>
     <div id="nav-mid">
-        <a href="https://majinbu-3000.ecole-404.com/main.php" id="creation">Retour</a>
+        <a href="https://majinbu-3000.ecole-404.com/index.php" id="creation">Retour</a>
     </div>
-        <div id="nav-right">
-            <a href="https://majinbu-3000.ecole-404.com/logout.php" id="connexion">Deconnexion</a>
-        </div>
 </header>
 <?php
 
+    // Appel l'API
     require_once("./API/Controller/ChapterReadUserController.php");
 
 ?>

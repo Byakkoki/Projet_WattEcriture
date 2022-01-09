@@ -21,5 +21,6 @@ function getOneStory($id){
         echo "<div class='buttonChapter'>";
         echo "<button class='buttonRead'><a href='https://majinbu-3000.ecole-404.com/ChapterReadUser.php?id=".$chapter["idChapitre"]."'>Read</a></button>";
         echo "</div>";
+        echo "</div>";
     }
 }

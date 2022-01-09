@@ -30,11 +30,13 @@
         $_POST["description"] != "" 
     ){
 
+        // Recupere la valeur id
         $components = parse_url($url);
         parse_str($components['query'], $results);
         createChapter($results['id']);
     }
 
+    // Créer un Chapitre
     function createChapter($id){
         global $connectionPDO;
 
@@ -42,14 +44,14 @@
         $getStory->execute();
         $getOneStory = $getStory->fetchAll(PDO::FETCH_ASSOC);
 
+        // Créer le chapitre par rapport a l'id de l'histoire
         $insertChapter = $connectionPDO->prepare('INSERT INTO `chapitre`(`idChapitre`, `histoire_idHistoire`, `name`, `text`) VALUES (:idChapitre, :idHistoire, :Name, :Text);');
         $insertChapter->execute(["idChapitre" => v4(), "idHistoire" => $id, "Name" => $_POST["title"], "Text" => $_POST["description"] ]);
         $chapterRequest = $insertChapter->fetch(PDO::FETCH_ASSOC);
 
-        header('Location: https://majinbu-3000.ecole-404.com/main.php');
+        // Renvoie le user dans la page de details de son Histoire
+        header('Location: https://majinbu-3000.ecole-404.com/story/StoryDetails.php?id='.$id.'');
 
-        print_r($chapterRequest);
-        die;
     }
 
 ?>

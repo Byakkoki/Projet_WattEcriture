@@ -30,6 +30,7 @@
 
         global $connectionPDO;
 
+        //recupere le chapitre par rapport a l'id chapitre
         $getChapitre = $connectionPDO->prepare('SELECT * FROM `chapitre` WHERE idChapitre="'.$results['id'].'";');
         $getChapitre->execute();
         $getAllChapitre = $getChapitre->fetch(PDO::FETCH_ASSOC);
@@ -52,8 +53,10 @@
 
         global $connectionPDO;
     
+        // Update de la BDD avec les nouvelle valeur
         $updateChapter = $connectionPDO->prepare("UPDATE `chapitre` SET `name`='".$_POST['modif']."', `text`='".$_POST['modif2']."' WHERE idChapitre='".$results['id']."'");
         $updateChapter->execute();
+
         header('Location: https://majinbu-3000.ecole-404.com/story/StoryDetails.php?id='.$getAllChapitre['histoire_idHistoire'].'');
     }
 

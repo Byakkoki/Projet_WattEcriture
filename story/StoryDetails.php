@@ -90,6 +90,7 @@
                 echo "<button class='buttonUpdate'><a href='https://majinbu-3000.ecole-404.com/story/ChapterUpdate.php?id=".$chapter["idChapitre"]."'>Update</a></button>";
                 echo "<button class='buttonDelete'><a href='https://majinbu-3000.ecole-404.com/story/ChapterDelete.php?id=".$chapter["idChapitre"]."'>Delete</a></button>";
                 echo "</div>";
+                echo "</div>";
 
 
             }

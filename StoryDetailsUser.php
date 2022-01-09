@@ -14,9 +14,6 @@
     <div id="nav-mid">
         <a href="https://majinbu-3000.ecole-404.com/index.php" id="creation">Retour</a>
     </div>
-        <div id="nav-right">
-            <a href="https://majinbu-3000.ecole-404.com/logout.php" id="connexion">Deconnexion</a>
-        </div>
 </header>
 
 <div class="container">
@@ -25,11 +22,12 @@
     <div class='chapterlist'>
 <?php
 
+    // Appel l'API
     require_once("./API/Controller/StoryDetailsUserController.php");
 
 ?>
     </div>
-    </div>
+
 
 </div>
 

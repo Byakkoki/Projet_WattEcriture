@@ -57,8 +57,10 @@
     
                 $updateStory = $connectionPDO->prepare("UPDATE `histoire` SET `description`='".$_POST['modif']."' WHERE idHistoire='".$results['id']."'");
                 $updateStory->execute();
-                echo "<script>alert(\"Your Story has been Updated\")</script>";
+
+                header('Location: https://majinbu-3000.ecole-404.com/story/StoryDetails.php?id='.$results['id'].'');
             }
+
             
         ?>
         </div>

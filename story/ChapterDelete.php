@@ -31,6 +31,7 @@
     
         global $connectionPDO;
 
+        //Supprime le chapitre par rapport a l'id de l'id chapitre
         $sql = 'DELETE FROM `chapitre`';
         $sql .= ' WHERE `idChapitre`="'.$results['id'].'";';
         $allRequest = $connectionPDO->prepare($sql);

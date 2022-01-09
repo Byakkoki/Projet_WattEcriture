@@ -7,11 +7,15 @@ function verifyToken($role = "ROLE_USER"){
 
     if(array_key_exists("WP-Auth-Token", $_COOKIE) != true){
         sendGuardResponse(401, ["message" => "You need to be logged"]);
+
+        header('Location: https://majinbu-3000.ecole-404.com/login.php');
         die;
     }else{
         $user = getOneUserByToken($_COOKIE["WP-Auth-Token"]);
         if($user == null || $user == false || $user == ""){
             sendGuardResponse(401, ["message" => "You need to be logged"]);
+
+            header('Location: https://majinbu-3000.ecole-404.com/login.php');
             die;
         }
 
@@ -21,6 +25,8 @@ function verifyToken($role = "ROLE_USER"){
         }else{
             if($admin["role"] == null){
                 sendGuardResponse(401, ["message" => "You have not a ROLE"]);
+
+                header('Location: https://majinbu-3000.ecole-404.com/login.php');
                 die; 
             }else{
                 if($admin["role"] == "ROLE_USER"){

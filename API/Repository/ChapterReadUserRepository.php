@@ -11,8 +11,8 @@ function getChapitre($id){
         echo "<section>";
         echo "<div class='Read'>";
         echo "<div class='name'><h3>".$chapitre['name']."</h3></div>";
-        echo "<div class='text'><p>".$chapitre['text']."</p></div>";
-        echo "<div class='button'><button class='buttonBack'><a href='https://majinbu-3000.ecole-404.com/index.php'>Retour</a></button></div>";
+        echo "<div class='text'><textarea type='text'>".$chapitre['text']."</textarea></div>";
+        echo "<div class='button'><button class='buttonBack'><a href='https://majinbu-3000.ecole-404.com/StoryDetailsUser.php?id=".$chapitre['histoire_idHistoire']."'>Retour</a></button></div>";
         echo "</div>";
         echo "<section>";
     }

@@ -31,20 +31,20 @@
     
         global $connectionPDO;
 
-        
-        $sql = 'DELETE FROM `histoire`';
-        $sql .= ' WHERE `idHistoire`="'.$results['id'].'";';
-        $allRequest = $connectionPDO->prepare($sql);
-        $allRequest->execute();
 
+        //Supprime tout les chapitre par rapport a l'id histoire puis après supprime l'histoire
         $deleteAllChapitre = 'DELETE FROM `chapitre`';
         $deleteAllChapitre .= ' WHERE `histoire_idHistoire`="'.$results['id'].'";';
         $deleteChapitre = $connectionPDO->prepare($deleteAllChapitre);
         $deleteChapitre->execute();
 
-        echo "<script>alert(\"Your Story/Chapter has been deleted !\")</script>";
+        $sql = 'DELETE FROM `histoire`';
+        $sql .= ' WHERE `idHistoire`="'.$results['id'].'";';
+        $allRequest = $connectionPDO->prepare($sql);
+        $allRequest->execute();
 
-
+        header('Location: https://majinbu-3000.ecole-404.com/main.php');
+        
     }else{
 
     }

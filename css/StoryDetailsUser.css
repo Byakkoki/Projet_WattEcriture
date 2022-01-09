@@ -168,3 +168,6 @@ a{
 h3{
     font-size: 15px;
 }
+.nameChapter h3{
+    margin-left: 10px;
+}

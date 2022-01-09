@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: #ffffff;
+    background-color: #181923;
 }
 form{
     display: flex;
@@ -36,6 +36,7 @@ form{
 
     display: flex;
     justify-content: center;
+
     padding-top: 10px;
 
 
@@ -76,6 +77,5 @@ a{
 }
 textarea{
     width: 95%;
-
     text-align: center;
 }
